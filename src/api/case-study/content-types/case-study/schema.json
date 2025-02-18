@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "case_studies",
+  "info": {
+    "singularName": "case-study",
+    "pluralName": "case-studies",
+    "displayName": "Case-Study",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Author": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "Content": {
+      "type": "richtext"
+    },
+    "Image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "publishdate": {
+      "type": "date"
+    },
+    "case_study_category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::case-study-category.case-study-category",
+      "inversedBy": "case_studies"
+    }
+  }
+}
